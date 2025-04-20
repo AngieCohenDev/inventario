@@ -11,14 +11,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email").value.trim();
 
     if (id && nombre && apellido && email) {
-      const fila = tabla.insertRow();
+      
+      let emailExiste = false;
+      for (let i = 0; i < tabla.rows.length; i++) {
+        const emailTabla = tabla.rows[i].cells[3].textContent;
+        if (emailTabla === email) {
+          emailExiste = true;
+          break;
+        }
+      }
 
-      fila.insertCell(0).textContent = id;
-      fila.insertCell(1).textContent = nombre;
-      fila.insertCell(2).textContent = apellido;
-      fila.insertCell(3).textContent = email;
-
-      form.reset();
+      if (emailExiste) {
+        alert("El correo ya existe.");
+      } else {
+        const fila = tabla.insertRow();
+        fila.insertCell(0).textContent = id;
+        fila.insertCell(1).textContent = nombre;
+        fila.insertCell(2).textContent = apellido;
+        fila.insertCell(3).textContent = email;
+        form.reset();
+      }
     } else {
       alert("Por favor, completá todos los campos.");
     }
