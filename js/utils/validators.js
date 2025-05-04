@@ -1,5 +1,5 @@
-export const validacionCamposFormulario = ({ id, nombre, apellido, email }, tabla) => {
-    if (!validarCamposLLenos({id, nombre, apellido, email},tabla)) {
+export const validacionCamposFormulario = ({ nombre, apellido, email }, tabla) => {
+    if (!validarCamposLLenos({nombre, apellido, email},tabla)) {
         return false
     }
 
@@ -10,14 +10,10 @@ export const validacionCamposFormulario = ({ id, nombre, apellido, email }, tabl
 }
 
 
-export const validarCamposLLenos = ({ id, nombre, apellido, email }, tabla) => {
+export const validarCamposLLenos = ({ nombre, apellido, email }, tabla) => {
    
-    if (id && nombre && apellido && email) {
+    if (nombre && apellido && email) {
 
-        if (id === "") {
-            alert("El campo ID no puede estar vacío.");
-            return false;
-        }
         if (nombre === "") {
             alert("El campo Nombre no puede estar vacío.");
             return false;
