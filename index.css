@@ -47,4 +47,42 @@ body {
   th {
     background-color: #f0f0f0;
   }
+  /* Fondo semitransparente del popup */
+  #popupEditar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
   
+    /* Solo aplica flex cuando se le agregue una clase extra */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+  }
+  
+
+/* Contenedor del formulario */
+#popupEditar .popup-contenido {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+/* Campos del formulario */
+#popupEditar input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Botones dentro del popup */
+#popupEditar button {
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
