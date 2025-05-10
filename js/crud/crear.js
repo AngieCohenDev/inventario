@@ -1,5 +1,6 @@
 import { crearBotonEliminar } from "../crud/eliminar.js";
 import { generarId } from "../utils/idGeneretor.js";
+import { crearBotonEditar } from "./editar.js";
 
 export const InsertarDatos = ({ nombre, apellido, email }, tabla, form) => {
   const fila = tabla.insertRow();
@@ -9,7 +10,13 @@ export const InsertarDatos = ({ nombre, apellido, email }, tabla, form) => {
   fila.insertCell(3).textContent = email;
   const celdaAcciones = fila.insertCell(4);
   const botonEliminar = crearBotonEliminar(fila);
+  const editar = crearBotonEditar(fila)
   celdaAcciones.appendChild(botonEliminar);
+  celdaAcciones.appendChild(editar)
 
   form.reset();
 };
+
+ 
+
+

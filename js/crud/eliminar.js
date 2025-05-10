@@ -1,6 +1,6 @@
-export const crearBotonEliminar = (fila) => {
+export const crearBotonEliminar = (id) => {
   const boton = document.createElement('button');
-  boton.textContent = 'X';
+  boton.textContent = 'Borrar';
   boton.id = 'btn_eliminar';
 
   boton.addEventListener('click', () => {
